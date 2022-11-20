@@ -13,11 +13,11 @@ const chats = {};
 const startGame = async (chatId) => {
     await bot.sendMessage(chatId, 'Я загадываю - ты угадываешь', gameOptions);
     const randomNumber = Math.floor( Math.random() * 10 );
-    chatId[chatId] = randomNumber;
+    chats[chatId] = randomNumber;
 }
 
-const start = () => {
-    bot.sendCommands([
+const start = async () => {
+    bot.setMyCommands([
         {command: '/start', description: 'Начало'},
         {command: '/info', description: 'Информация об игре'},
         {command: '/game', description: 'Играть'}
