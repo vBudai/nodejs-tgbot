@@ -4,10 +4,11 @@ const {gameOptions, againOptions} = require('./options.js')
 
 require('./token.js')
 
+const {token} = require('./token.js')
+
+const chats = {}
+
 const bot = new TelegramApi(token, {polling: true})
-
-const chats = {};
-
 
 
 const startGame = async (chatId) => {
